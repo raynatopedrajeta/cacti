@@ -1,12 +1,13 @@
 name: quorum-multi-party-all-in-one-publish
 
 on:
-  push:
-    # Publish `main` as Docker `latest` image.
-    branches:
+  pull_request:
+    branches: 
       - main
+      - dev
 
-    # Publish `v1.2.3` tags as releases.
+  # Publish `v1.2.3` tags as releases.
+  push:
     tags:
       - v*
 

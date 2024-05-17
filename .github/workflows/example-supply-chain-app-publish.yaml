@@ -1,12 +1,13 @@
 name: example-supply-chain-app-publish
 
 on:
-  push:
-    # Publish `main` as Docker `latest` image.
-    branches:
+  pull_request:
+    branches: 
       - main
-
-    # Publish `v1.2.3` tags as releases.
+      - dev
+    
+  # Publish `v1.2.3` tags as releases.
+  push:
     tags:
       - v*
 

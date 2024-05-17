@@ -4,9 +4,12 @@ env:
   NODEJS_VERSION: v18.18.2
 
 on:
-  push:
+  pull_request:
+    branches: 
+      - main
+      - dev
 
-    # Publish `v1.2.3` tags as releases.
+  push:
     tags:
       - v*
 

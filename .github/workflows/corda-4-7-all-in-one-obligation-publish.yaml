@@ -1,12 +1,13 @@
 name: corda-4-7-all-in-one-obligation-publish
 
 on:
-  push:
-    # Publish `main` as Docker `latest` image.
-    branches:
+  pull_request:
+    branches: 
       - main
+      - dev
 
-    # Publish `v1.2.3` tags as releases.
+  # Publish `v1.2.3` tags as releases.
+  push:
     tags:
       - v*
 

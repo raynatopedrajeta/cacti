@@ -9,9 +9,9 @@
 <link href="../cactus-plugin-ledger-connector-besu/" rel="prev"/>
 <link href="../cactus-plugin-ledger-connector-fabric/" rel="next"/>
 <link href="../../../images/HL_Cacti_Logo_Colorreverse.svg" rel="icon"/>
-<meta content="mkdocs-1.6.0, mkdocs-material-9.5.27" name="generator"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.5.29" name="generator"/>
 <title>Connector Corda - Using and Developing with Hyperledger Cacti</title>
-<link href="../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.76a95c52.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -653,13 +653,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cactus-plugin-ledger-connector-quorum/">
-<span class="md-ellipsis">
-    Connector Quorum
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../cactus-test-api-client/">
 <span class="md-ellipsis">
     Test Api Client
@@ -670,13 +663,6 @@
 <a class="md-nav__link" href="../cactus-test-cmd-api-server/">
 <span class="md-ellipsis">
     Test CMD Api Server
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../cactus-test-plugin-ledger-connector-quorum/">
-<span class="md-ellipsis">
-    Test Connector Quorum
   </span>
 </a>
 </li>
@@ -736,13 +722,6 @@
 <a class="md-nav__link" href="../../support/iroha.md">
 <span class="md-ellipsis">
     Hyperledger Iroha
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../support/quorum/">
-<span class="md-ellipsis">
-    Quorum
   </span>
 </a>
 </li>
@@ -2079,7 +2058,8 @@ const apiClient = new CordaApi({ basePath: apiUrl });</p>
   scrape_interval: 5s
   static_configs:
     - targets: ['{host}:{port}']</p>
-<p>Here the <code>host:port</code> is where the prometheus exporter metrics are exposed. The test cases (For example, packages/cactus-plugin-ledger-connector-corda/src/test/typescript/integration/deploy-cordapp-jars-to-nodes.test.ts) exposes it over <code>0.0.0.0</code> and a random port(). The random port can be found in the running logs of the test case and looks like (42379 in the below mentioned URL) <code>Metrics URL: http://0.0.0.0:42379/api/v1/plugins/@hyperledger/cactus-plugin-ledger-connector-corda/get-prometheus-exporter-metrics</code></p>
+<p>Here the <code>host:port</code> is where the prometheus exporter metrics are exposed. An example URL for metric would be something like this:
+<code>http://localhost:42379/api/v1/plugins/@hyperledger/cactus-plugin-ledger-connector-corda/get-prometheus-exporter-metrics</code></p>
 <p>Once edited, you can start the prometheus service by referencing the above edited prometheus.yml file. On the prometheus graphical interface (defaulted to <a href="http://localhost:9090">http://localhost:9090</a>), choose <strong>Graph</strong> from the menu bar, then select the <strong>Console</strong> tab. From the <strong>Insert metric at cursor</strong> drop down, select <strong>cactus_corda_total_tx_count</strong> and click <strong>execute</strong></p>
 <h3 id="helper-code">Helper code<a class="headerlink" href="#helper-code" title="Permanent link">¶</a></h3>
 <h4 id="responsetypets">response.type.ts<a class="headerlink" href="#responsetypets" title="Permanent link">¶</a></h4>
@@ -2149,7 +2129,7 @@ const apiClient = new CordaApi({ basePath: apiUrl });</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
-<script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+<script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
 <script>document$.subscribe(() => {
             window.update_swagger_ui_iframe_height = function (id) {
                 var iFrameID = document.getElementById(id);

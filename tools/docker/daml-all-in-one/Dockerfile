@@ -4,8 +4,13 @@ RUN apt update
 RUN apt install curl openjdk-21-jdk -y
 RUN curl -sSL https://get.daml.com/ | sh
 ENV PATH="/root/.daml/bin:${PATH}"
-RUN daml new create-daml-app --template create-daml-app
-WORKDIR /create-daml-app
+# RUN daml new create-daml-app --template create-daml-app
+# WORKDIR /create-daml-app
+
+# # # Run DAML Tests
+# RUN cd ..
+RUN daml new quickstart --template quickstart-java
+WORKDIR /quickstart
 
 RUN apt-get update && apt-get install -y supervisor
 RUN mkdir -p /var/log/supervisor

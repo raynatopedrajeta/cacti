@@ -14,6 +14,10 @@ export {
 } from "./besu/besu-mp-test-ledger";
 
 export {
+  DamlTestLedger
+} from "./daml/daml-test-ledger";
+
+export {
   CordaTestLedger,
   ICordaTestLedgerConstructorOptions,
   CORDA_TEST_LEDGER_DEFAULT_OPTIONS,

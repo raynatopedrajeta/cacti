@@ -27,6 +27,7 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisord.conf
 
 EXPOSE 9001
+EXPOSE 7575
 
 ENTRYPOINT ["/usr/bin/supervisord"]
 CMD ["--configuration","/etc/supervisord.conf", "--nodaemon"]

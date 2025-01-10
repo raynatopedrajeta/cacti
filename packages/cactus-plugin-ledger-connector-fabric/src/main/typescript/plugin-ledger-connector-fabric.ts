@@ -307,15 +307,22 @@ export class PluginLedgerConnectorFabric
     this.sshDebugOn = opts.sshDebugOn === true;
     if (this.opts.sshConfig) {
       this.sshConfig = this.opts.sshConfig;
+
+      if (this.sshDebugOn) {
+        this.sshConfig = this.enableSshDebugLogs(this.sshConfig);
+      }
     } else if (this.opts.sshConfigB64) {
       const sshConfigBuffer = Buffer.from(this.opts.sshConfigB64, "base64");
       const sshConfigString = sshConfigBuffer.toString("utf-8");
       this.sshConfig = JSON.parse(sshConfigString);
+
+      if (this.sshDebugOn) {
+        this.sshConfig = this.enableSshDebugLogs(this.sshConfig);
+      }
     } else {
-      throw new Error("Cannot instantiate Fabric connector without SSH config");
-    }
-    if (this.sshDebugOn) {
-      this.sshConfig = this.enableSshDebugLogs(this.sshConfig);
+      // throw new Error("Cannot instantiate Fabric connector without SSH config");
+      this.sshConfig = {};
+      console.log("The check for sshConfig has been temporarily removed");
     }
 
     this.signCallback = opts.signCallback;
